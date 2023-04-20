@@ -1,3 +1,5 @@
+import { COLORS } from '../constants/colors';
+
 export const setScrollBarStyled = () => {
   return `
         ::-webkit-scrollbar {
@@ -5,9 +7,9 @@ export const setScrollBarStyled = () => {
         }
         
         ::-webkit-scrollbar-thumb {
-          background-color: #ccc;
+          background-color: ${COLORS.blue};
           border-radius: 20px;
-          border: 3px solid #212121;
+          border: 3px solid ${COLORS.white};
         }
         &:hover{
         
