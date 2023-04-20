@@ -9,7 +9,7 @@ export const Layout = ({ children }: ILayout): JSX.Element => {
   return (
     <SC.Container>
       {children}
-      <SC.Background />
+      <SC.Background></SC.Background>
     </SC.Container>
   );
 };

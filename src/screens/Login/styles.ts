@@ -13,7 +13,7 @@ export const Container = styled.div`
     align-items: center;
     width: 100%;
     max-width: 600px;
-    padding: 20px 10px;
+    padding: 50px 10px;
     border-radius: 6px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
@@ -26,6 +26,6 @@ export const Container = styled.div`
   }
 
   button {
-    background-color: red;
+    background-color: #174197;
   }
 `;
