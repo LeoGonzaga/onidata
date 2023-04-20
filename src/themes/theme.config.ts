@@ -30,4 +30,11 @@ input, textarea, button {
 }
 ${setScrollBarStyled()}
 
+
+.row {
+    display: flex;
+    width: 80%;
+    gap: 10px;
+  }
+
 `;

@@ -5,5 +5,5 @@ import { COLORS } from '../../constants/colors';
 export const StyledTextFiled = styled(TextField)`
   background-color: ${COLORS.white};
   width: 80%;
-  margin-bottom: 10px !important;
+  margin: 5px 0px !important;
 `;

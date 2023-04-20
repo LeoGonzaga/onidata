@@ -1,8 +1,10 @@
 import { Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 import * as SC from './styles';
 import Input from '@components/Input';
 import Button from '@components/Button';
 import useForm from './useForm';
+import LinkButton from '@components/LinkButton';
 
 export const Form = (): JSX.Element => {
   const { handleSubmit } = useForm();
@@ -15,11 +17,11 @@ export const Form = (): JSX.Element => {
       <Typography fontSize={30} fontWeight={600} marginBottom={1}>
         Bem vindo a Onidata!
       </Typography>
-      <Input />
-      <Input />
+      <Input placeholder="example@email.com" type="email" label="seu email" />
+      <Input placeholder="" type="password" label="sua senha" />
       <Button>Primary</Button>
 
-      <p>Criar uma conta</p>
+      <LinkButton text="Criar uma conta" value="/register" />
     </SC.Container>
   );
 };

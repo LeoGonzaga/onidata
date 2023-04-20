@@ -5,11 +5,4 @@ export const Container = styled.div`
   flex-direction: column;
   width: 100%;
   align-items: center;
-
-  .row {
-    display: flex;
-    align-items: center;
-    width: 80%;
-    gap: 10px;
-  }
 `;
