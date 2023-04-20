@@ -18,7 +18,6 @@ body, button,input {
 }
 body{
   font-family: 'Roboto', sans-serif;
-  background-color: blue;
   p {
     margin: unset;
   }
