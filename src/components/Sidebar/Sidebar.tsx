@@ -1,4 +1,3 @@
-import { Typography } from '@mui/material';
 import * as SC from './styles';
 
 export const Sidebar = (): JSX.Element => {
@@ -11,11 +10,7 @@ export const Sidebar = (): JSX.Element => {
         />
       </SC.Logo>
 
-      <SC.Content>
-        <Typography fontSize={20} fontWeight={600}>
-          Produtos
-        </Typography>
-      </SC.Content>
+      <SC.Content></SC.Content>
     </SC.Container>
   );
 };

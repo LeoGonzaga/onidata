@@ -5,4 +5,9 @@ export const Container = styled.div`
   height: 100px;
   width: 100%;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  padding: 0px 20px;
 `;
