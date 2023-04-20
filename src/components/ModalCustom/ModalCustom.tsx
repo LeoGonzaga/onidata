@@ -1,46 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
+import * as SC from './styles';
+import BackButton from '@components/BackButton';
 
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-  },
-};
+interface IModalCustom {
+  isOpen: boolean;
+  onClose: () => void;
+}
 
-export const ModalCustom = (): JSX.Element => {
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-
-  function openModal() {
-    setIsOpen(true);
-  }
-
-  function closeModal() {
-    setIsOpen(false);
-  }
-
+export const ModalCustom = ({ isOpen, onClose }: IModalCustom): JSX.Element => {
   return (
     <Modal
-      isOpen={true}
-      onRequestClose={closeModal}
-      style={customStyles}
+      isOpen={isOpen}
+      onRequestClose={onClose}
       contentLabel="Example Modal"
       className="modalOverlay"
+      ariaHideApp={false}
     >
-      <button onClick={closeModal}>close</button>
-      <div>I am a modal</div>
-      <form>
-        <input />
-        <button>tab navigation</button>
-        <button>stays</button>
-        <button>inside</button>
-        <button>the modal</button>
-      </form>
+      <SC.Container>
+        <BackButton onClick={onClose} />
+      </SC.Container>
     </Modal>
   );
 };

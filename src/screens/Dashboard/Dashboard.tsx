@@ -4,11 +4,10 @@ import Header from '@components/Header';
 import Table from '@components/Table';
 import Button from '@components/Button';
 import ModalCustom from '@components/ModalCustom';
+import useDashboard from './useDashboard';
 
 export const Dashboard = (): JSX.Element => {
-  const handleClick = () => {
-    console.log('hehe');
-  };
+  const { handleToggleModal, isOpen, products } = useDashboard();
 
   return (
     <SC.Container>
@@ -17,14 +16,14 @@ export const Dashboard = (): JSX.Element => {
         <Header />
         <SC.CreateItem>
           <input type="text" placeholder="Buscar produto" />
-          <Button onClick={handleClick}>Criar novo produto</Button>
+          <Button onClick={handleToggleModal}>Criar novo produto</Button>
         </SC.CreateItem>
         <SC.Content>
-          <Table />
+          <Table data={products} />
         </SC.Content>
       </SC.Body>
 
-      {/* <ModalCustom /> */}
+      <ModalCustom isOpen={isOpen} onClose={handleToggleModal} />
     </SC.Container>
   );
 };

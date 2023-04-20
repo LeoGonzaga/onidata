@@ -41,7 +41,7 @@ ${setScrollBarStyled()}
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
+  height: 100vh;
   top: 0;
   right: 0;
   bottom: 0;

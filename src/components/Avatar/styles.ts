@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { COLORS } from '../../constants/colors';
 
 export const Container = styled.div`
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background-color: ${COLORS.blue};
   color: #fff;
@@ -12,4 +12,10 @@ export const Container = styled.div`
   display: grid;
   align-items: center;
   text-align: center;
+
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
 `;

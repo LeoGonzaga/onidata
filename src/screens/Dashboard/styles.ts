@@ -19,10 +19,20 @@ export const CreateItem = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 0px 10px;
-
   input {
     width: 60%;
     padding: 0px 10px;
+    font-size: 16px;
+    outline: none;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    &:hover {
+      border: 1px solid ${COLORS.blue};
+    }
+
+    &:focus {
+      border: 1px solid ${COLORS.blue};
+    }
   }
 
   button {
