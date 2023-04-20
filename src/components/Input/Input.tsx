@@ -1,11 +1,18 @@
 import * as SC from './styles';
 
-export const Input = (): JSX.Element => {
+interface IInput {
+  placeholder?: string;
+  type?: string;
+  label: string;
+}
+
+export const Input = ({ type, placeholder, label }: IInput): JSX.Element => {
   return (
     <SC.StyledTextFiled
-      label="Digite seu email"
+      label={label && `Digite ${label}`}
       variant="outlined"
-      placeholder="example@email.com"
+      placeholder={placeholder}
+      type={type}
     />
   );
 };
