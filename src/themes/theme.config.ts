@@ -46,8 +46,11 @@ ${setScrollBarStyled()}
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(62, 65, 87, 0.7);
 }
 
+.ReactModal__Overlay {
+  background: rgba(62, 65, 87, 0.7) !important;
+
+}
 
 `;

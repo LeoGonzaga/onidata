@@ -21,7 +21,6 @@ interface IRow {
 }
 
 export function TableCustom({ data }: any) {
-  console.log({ data });
   const [page, setPage] = useState(0);
 
   const handleChangePage = useCallback((event: unknown, newPage: number) => {

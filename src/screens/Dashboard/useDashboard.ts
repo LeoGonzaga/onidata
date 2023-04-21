@@ -32,7 +32,6 @@ const useDashboard = () => {
       );
     });
     setProducts(formatedItemsToTable);
-    console.log(formatedItemsToTable);
   };
 
   const handleToggleModal = () => {
