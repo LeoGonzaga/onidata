@@ -7,3 +7,9 @@ export const StyledTextFiled = styled(TextField)`
   width: 80%;
   margin: 5px 0px !important;
 `;
+
+export const Error = styled.p`
+  color: red;
+  font-size: 13px;
+  width: 80%;
+`;
