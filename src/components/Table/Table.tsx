@@ -9,6 +9,7 @@ import Paper from '@mui/material/Paper';
 import { IProducts } from '../../@types/products';
 import Avatar from '@components/Avatar';
 import TablePagination from '@mui/material/TablePagination';
+import Center from '@components/Center';
 
 interface IRow {
   avatar: string;
@@ -46,8 +47,10 @@ export function TableCustom({ data }: any) {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell align="center">
-                <Avatar url={row.avatar} />
-                {row.name}
+                <Center>
+                  <Avatar url={row.avatar} />
+                  {row.name}
+                </Center>
               </TableCell>
               <TableCell align="right">{row.brand}</TableCell>
               <TableCell align="right">R$ {row.price}</TableCell>
