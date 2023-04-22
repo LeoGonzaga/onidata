@@ -6,10 +6,10 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { IProducts } from '../../@types/products';
 import Avatar from '@components/Avatar';
 import TablePagination from '@mui/material/TablePagination';
 import Center from '@components/Center';
+import { v4 as uuidv4 } from 'uuid';
 
 interface IRow {
   avatar: string;
@@ -42,7 +42,7 @@ export function TableCustom({ data }: any) {
         <TableBody>
           {data.map((row: IRow) => (
             <TableRow
-              key={row.name}
+              key={uuidv4()}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell align="center">
