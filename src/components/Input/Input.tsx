@@ -20,6 +20,7 @@ export const Input = ({
   return (
     <>
       <SC.StyledTextFiled
+        InputLabelProps={{ shrink: true }}
         label={label && `Digite ${label}`}
         variant="outlined"
         placeholder={placeholder}

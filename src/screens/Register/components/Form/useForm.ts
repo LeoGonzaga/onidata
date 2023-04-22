@@ -1,6 +1,6 @@
 import { ChangeEvent } from 'react';
 
-const useForm = () => {
+const useFormRegister = () => {
   const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log('hehe');
@@ -8,4 +8,4 @@ const useForm = () => {
   return { handleSubmit };
 };
 
-export default useForm;
+export default useFormRegister;

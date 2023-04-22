@@ -8,8 +8,10 @@ export const Container = styled.div`
 
   .row {
     display: flex;
-    align-items: center;
     width: 80%;
-    gap: 10px;
+  }
+
+  .select {
+    width: 80%;
   }
 `;

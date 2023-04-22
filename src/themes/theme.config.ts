@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 import { setScrollBarStyled } from './utils';
+import { COLORS } from '../constants/colors';
 
 export const GlobalStyles = createGlobalStyle`
 * {
@@ -52,5 +53,18 @@ ${setScrollBarStyled()}
   background: rgba(62, 65, 87, 0.7) !important;
 
 }
+
+input {
+    background-color: ${COLORS.white};
+    width: 80%;
+    padding: 16.5px 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+
+    &:focus {
+      border-color: ${COLORS.blue};
+    }
+  }
 
 `;

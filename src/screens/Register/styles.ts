@@ -16,12 +16,11 @@ export const Container = styled.div`
     max-width: 600px;
     padding: 50px 10px;
     border-radius: 6px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
 
   img {
-    width: 200px;
-    height: 200px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     margin-bottom: 20px;
   }
