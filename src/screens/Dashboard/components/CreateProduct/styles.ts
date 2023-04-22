@@ -49,4 +49,9 @@ export const ContentInputMask = styled.div`
   .row {
     width: 100%;
   }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
 `;

@@ -6,6 +6,7 @@ import Dashboard from '@screens/Dashboard';
 
 import { store } from './store/index';
 import { Provider } from 'react-redux';
+import PrivateRoute from '@components/PrivateRoute';
 
 const ErrorPage = () => {
   return <h1>Pagina não encontrada</h1>;
@@ -19,7 +20,15 @@ function App() {
         <Routes>
           <Route element={<Login />} path="/login" />
           <Route element={<Register />} path="/register" />
-          <Route element={<Dashboard />} path="/" />
+
+          <Route
+            path="/"
+            element={
+              <PrivateRoute isAllowed={true}>
+                <Dashboard />
+              </PrivateRoute>
+            }
+          />
 
           <Route element={<ErrorPage />} path="*" />
         </Routes>

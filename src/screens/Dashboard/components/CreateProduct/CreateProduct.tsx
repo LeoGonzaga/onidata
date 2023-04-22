@@ -1,41 +1,18 @@
 import Input from '@components/Input';
-import * as SC from './styles';
-import { TextField, TextFieldProps, Typography } from '@mui/material';
-import InputMask, { Props } from 'react-input-mask';
-import { ReactElement, useState } from 'react';
+import { Typography } from '@mui/material';
+import InputMask from 'react-input-mask';
 
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import {
-  SubmitHandler,
-  useFieldArray,
-  useForm,
-  Controller,
-} from 'react-hook-form';
-import Button from '@components/Button';
-
-const INITIAL_VALUE_ADDRESS = {
-  zipcode: '',
-  city: '',
-  district: '',
-  state: '',
-  street: '',
-  number: '',
-  complement: '',
-};
-
-const addressSchema = {
-  zipcode: yup.string().required('CEP é obrigatório'),
-  city: yup.string().required('Cidade é obrigatório'),
-  district: yup.string().required('Bairro é obrigatório'),
-  state: yup.string().required('Estado é obrigatório'),
-  street: yup.string().required('Rua é obrigatório'),
-  number: yup.string(),
-  complement: yup.string(),
-};
+import { useForm } from 'react-hook-form';
+import Error from '@components/Error';
+import * as SC from './styles';
 
 const schema = yup.object({
-  name: yup.string().required('Nome é obrigatório'),
+  name: yup
+    .string()
+    .required('Nome é obrigatório')
+    .matches(/^[aA-zZ\s]+$/, 'Apenas letras no nome do produto'),
   brand: yup.string().required('Marca é obrigatória'),
   price: yup.string().required('Preço é obrigatória'),
   stock: yup.string().required('Estoque é obrigatório'),
@@ -45,9 +22,7 @@ const schema = yup.object({
 export const CreateProduct = (): JSX.Element => {
   const {
     register,
-    control,
     handleSubmit,
-    setValue,
     formState: { errors },
     clearErrors,
     reset,
@@ -66,8 +41,6 @@ export const CreateProduct = (): JSX.Element => {
   const onSubmit = (data: any) => {
     console.log(JSON.stringify(data, null, 2));
   };
-
-  console.log(errors);
 
   return (
     <SC.Container>
@@ -93,26 +66,33 @@ export const CreateProduct = (): JSX.Element => {
             placeholder="Preço"
             {...register('price', { required: true })}
           />
-          <div className="row">
-            <InputMask
-              mask={'999.999'}
-              alwaysShowMask={false}
-              maskPlaceholder=""
-              maskChar=""
-              type={'text'}
-              placeholder="Quantidade em estoque"
-              {...register('stock', { required: true })}
-            />
+          {errors.price && <Error>{errors.price.message}</Error>}
 
-            <InputMask
-              mask={'999.999'}
-              alwaysShowMask={false}
-              maskPlaceholder=""
-              maskChar=""
-              type={'text'}
-              placeholder="Quantidade de vendas"
-              {...register('sales', { required: true })}
-            />
+          <div className="row">
+            <div className="column">
+              <InputMask
+                mask={'999.999'}
+                alwaysShowMask={false}
+                maskPlaceholder=""
+                maskChar=""
+                type={'text'}
+                placeholder="Quantidade em estoque"
+                {...register('stock', { required: true })}
+              />
+              {errors.stock && <Error>{errors.stock.message}</Error>}
+            </div>
+            <div className="column">
+              <InputMask
+                mask={'999.999'}
+                alwaysShowMask={false}
+                maskPlaceholder=""
+                maskChar=""
+                type={'text'}
+                placeholder="Quantidade de vendas"
+                {...register('sales', { required: true })}
+              />
+              {errors.sales && <Error>{errors.sales.message}</Error>}
+            </div>
           </div>
         </SC.ContentInputMask>
         <button type="submit">Criar</button>

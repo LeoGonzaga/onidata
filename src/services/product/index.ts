@@ -1,3 +1,3 @@
-import { listAll } from './product';
+import { listAll, create } from './product';
 
-export default { listAll };
+export default { listAll, create };

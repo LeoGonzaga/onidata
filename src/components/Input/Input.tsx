@@ -1,5 +1,6 @@
 import { Typography } from '@mui/material';
 import * as SC from './styles';
+import Error from '@components/Error';
 
 interface IInput {
   placeholder?: string;
@@ -26,7 +27,7 @@ export const Input = ({
         error={!!error?.message}
         {...register}
       />
-      <SC.Error>{error?.message}</SC.Error>
+      <Error>{error?.message}</Error>
     </>
   );
 };
