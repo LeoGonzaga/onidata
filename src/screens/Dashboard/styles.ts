@@ -16,9 +16,10 @@ export const Content = styled.div`
 `;
 
 export const CreateItem = styled.div`
+  background-color: ${COLORS.white};
   display: flex;
   justify-content: space-between;
-  padding: 0px 10px;
+  padding: 10px;
   input {
     width: 60%;
     padding: 0px 10px;
